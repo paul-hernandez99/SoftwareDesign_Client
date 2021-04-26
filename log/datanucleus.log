@@ -1,0 +1,32 @@
+20:49:45,661 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 5.2.7) for API "JDO"
+20:49:45,803 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Investigador" is already enhanced.
+20:49:45,803 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Investigador
+20:49:45,805 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Equipo" is already enhanced.
+20:49:45,805 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Equipo
+20:49:45,806 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Investigador_Equipo" is already enhanced.
+20:49:45,806 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Investigador_Equipo
+20:49:45,808 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Avance" is already enhanced.
+20:49:45,808 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Avance
+20:49:45,809 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Organizacion" is already enhanced.
+20:49:45,810 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Organizacion
+20:49:45,811 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Tematica" is already enhanced.
+20:49:45,811 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Tematica
+20:49:45,813 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Proyecto" is already enhanced.
+20:49:45,813 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Proyecto
+20:49:45,813 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 7 classes. Timings : input=119 ms, enhance=27 ms, total=146 ms. Consult the log for full details
+20:50:53,367 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 5.2.7) for API "JDO"
+20:50:53,508 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Investigador" is already enhanced.
+20:50:53,508 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Investigador
+20:50:53,510 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Equipo" is already enhanced.
+20:50:53,510 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Equipo
+20:50:53,512 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Investigador_Equipo" is already enhanced.
+20:50:53,512 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Investigador_Equipo
+20:50:53,514 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Avance" is already enhanced.
+20:50:53,514 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Avance
+20:50:53,515 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Organizacion" is already enhanced.
+20:50:53,515 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Organizacion
+20:50:53,516 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Tematica" is already enhanced.
+20:50:53,517 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Tematica
+20:50:53,518 (main) INFO  [DataNucleus.Enhancer] - Class "server.datos.Proyecto" is already enhanced.
+20:50:53,518 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : server.datos.Proyecto
+20:50:53,519 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 7 classes. Timings : input=116 ms, enhance=26 ms, total=142 ms. Consult the log for full details

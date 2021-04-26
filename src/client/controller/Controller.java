@@ -1,25 +1,29 @@
 package client.controller;
 
-import client.SL.ServiceLocator;
-import client.LP.PanelPrincipal;
+import server.remote.IServer;
+import client.gui.PanelPrincipal;
+import client.remote.RMIServiceLocator;
 
 import java.rmi.RemoteException;
 
 public class Controller {
 
-  private ServiceLocator serviceLocator;
+  private RMIServiceLocator serviceLocator;
 
   public Controller(String [] args) {
-    PanelPrincipal frame = new PanelPrincipal(this);
-    this.serviceLocator = new ServiceLocator();
+
+    this.serviceLocator = new RMIServiceLocator();
     this.serviceLocator.setService(args);
+    PanelPrincipal frame = new PanelPrincipal(this);
   }
 
   public String operacionEjemplo() throws RemoteException {
+
     return serviceLocator.getService().operacionEjemplo();
   }
 
   public static void main (String [] args) {
+
     Controller controller = new Controller(args);
   }
 }
