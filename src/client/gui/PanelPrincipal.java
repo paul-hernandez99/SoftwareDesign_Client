@@ -2,7 +2,7 @@
 TIENE SOLO UN BOTON Y UN ACTIONLISTENER QUE EJECUTA LA OPERACION1 DEFINIDA EN IFACADE(PARTE DEL SERVIDOR)
 
 ESTE BLOQUE SIRVE PARA COMPROBAR QUE DESDE LA LP PODEMOS LLAMAR A LOS METODOS DEFINIDOS EN LA INTERFACE DEL SERVIDOR.
-ESTA LLAMADA SE HACE DESDE EL CONTROLLER QUE A SU VEZ LLAMA AL SERVICE LOCATOR.*/
+ESTA LLAMADA SE HACE DESDE EL CONTROLLER QUE A SU VEZ LLAMA AL SERVICE LOCATOR.
 
 package client.gui;
 
@@ -37,14 +37,14 @@ public class PanelPrincipal {
     frame.setVisible(true);
   }
 }
-
+*/
 
 /*-------------------------------------------
 ESTA ES LA LP QUE HIZO HARITZ Y LA QUE USAREMOS EN LA APLICACION. LA HE COMENTADO PARA QUE SEA MAS SENCILLO ENTENDER COMO FUNCIONA LA CONEXION
 MEDIANTE EL EJEMPLO DE ARRIBA.
----------------------------------------------
+---------------------------------------------*/
 
-package client.LP;
+package client.gui;
 
 import java.rmi.RemoteException;
 import java.awt.BorderLayout;
@@ -941,4 +941,4 @@ public class PanelPrincipal extends JFrame {
 		rdbtnNewRadioButton_1_1.setEnabled(false);
 		rdbtnNewRadioButton_2_1.setEnabled(false);
 	}
-}*/
+}
