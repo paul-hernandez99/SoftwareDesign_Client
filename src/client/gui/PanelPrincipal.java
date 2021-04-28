@@ -289,10 +289,14 @@ public class PanelPrincipal extends JFrame {
 		JButton btnNewButton_4 = new JButton("");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ArrayList <String> arrayParams = new ArrayList<>();
-				controller.descarga(arrayParams);
-				 JOptionPane.showMessageDialog(null, "La descarga de datos se ha efectuado correctamente en la base de datos.");
 
+				ArrayList <String> arrayParams = new ArrayList<>();
+				try {
+					System.out.println(controller.descarga(arrayParams));
+				} catch(RemoteException re) {
+					re.printStackTrace();
+				}
+				JOptionPane.showMessageDialog(null, "La descarga de datos se ha efectuado correctamente en la base de datos.");
 			}
 		});
 		btnNewButton_4.setDefaultCapable(false);
