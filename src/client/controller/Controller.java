@@ -1,6 +1,6 @@
 package client.controller;
 
-import server.remote.IServer;
+import server.remote.IFacade;
 import client.gui.PanelPrincipal;
 import client.remote.RMIServiceLocator;
 import java.util.ArrayList;
