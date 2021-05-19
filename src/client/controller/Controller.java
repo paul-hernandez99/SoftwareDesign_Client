@@ -17,9 +17,9 @@ public class Controller {
     PanelPrincipal frame = new PanelPrincipal(this);
   }
 
-  public String descarga(ArrayList <String> arrayParams) throws RemoteException {
+  public String descarga() throws RemoteException {
 
-    return serviceLocator.getService().descarga(arrayParams);
+    return serviceLocator.getService().descarga();
   }
 
   public static void main (String [] args) {
