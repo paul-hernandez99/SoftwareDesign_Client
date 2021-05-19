@@ -20,18 +20,33 @@ public class PanelPrincipal {
 
     this.controller = controller;
     JFrame frame = new JFrame();
-    JButton button = new JButton("operacionEjemplo");
+    JButton button = new JButton("USUARIOS");
     button.setBounds(200,225,100,50);
     button.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         try {
-          System.out.println(controller.descarga());
+          System.out.println(controller.descargarUsuarios());
         } catch (RemoteException re){
           re.printStackTrace();
         }
       }
     });
+
+    JButton button1 = new JButton("ORGANIZACIONES");
+    button1.setBounds(100,125,70,70);
+    button1.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          System.out.println(controller.descargarOrganizaciones());
+        } catch (RemoteException re){
+          re.printStackTrace();
+        }
+      }
+    });
+
+
     frame.add(button);
+    frame.add(button1);
     frame.setSize(500,500);
     frame.setLayout(null);
     frame.setVisible(true);

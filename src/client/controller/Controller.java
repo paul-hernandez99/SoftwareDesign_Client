@@ -17,9 +17,12 @@ public class Controller {
     PanelPrincipal frame = new PanelPrincipal(this);
   }
 
-  public String descarga() throws RemoteException {
+  public String descargarUsuarios() throws RemoteException {
+    return serviceLocator.getService().descargarUsuarios();
+  }
 
-    return serviceLocator.getService().descarga();
+  public String descargarOrganizaciones() throws RemoteException {
+    return serviceLocator.getService().descargarOrganizaciones();
   }
 
   public static void main (String [] args) {
