@@ -44,9 +44,21 @@ public class PanelPrincipal {
       }
     });
 
+    JButton button2 = new JButton("REPOSITORIOS");
+    button2.setBounds(0,125,70,70);
+    button2.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          System.out.println(controller.descargarRepositorios());
+        } catch (RemoteException re){
+          re.printStackTrace();
+        }
+      }
+    });
 
     frame.add(button);
     frame.add(button1);
+    frame.add(button2);
     frame.setSize(500,500);
     frame.setLayout(null);
     frame.setVisible(true);

@@ -25,6 +25,10 @@ public class Controller {
     return serviceLocator.getService().descargarOrganizaciones();
   }
 
+  public String descargarRepositorios() throws RemoteException {
+    return serviceLocator.getService().descargarRepositorios();
+  }
+
   public static void main (String [] args) {
 
     Controller controller = new Controller(args);
