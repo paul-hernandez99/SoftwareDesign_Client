@@ -1,83 +1,11 @@
-/*ESTE TROZO COMENTADO ES UNA GUI BASICA DE PRUEBA QUE HICE PARA PROBAR LA CONEXION CON EL SERVIDOR MEDIANTE EL CONTROLLER.
-TIENE SOLO UN BOTON Y UN ACTIONLISTENER QUE EJECUTA LA OPERACION1 DEFINIDA EN IFACADE(PARTE DEL SERVIDOR)
-
-ESTE BLOQUE SIRVE PARA COMPROBAR QUE DESDE LA LP PODEMOS LLAMAR A LOS METODOS DEFINIDOS EN LA INTERFACE DEL SERVIDOR.
-ESTA LLAMADA SE HACE DESDE EL CONTROLLER QUE A SU VEZ LLAMA AL SERVICE LOCATOR.*/
-
 package client.gui;
 
-import javax.swing.*;
-import java.awt.event.*;
+
 import java.rmi.RemoteException;
 
 import client.controller.Controller;
-
-public class PanelPrincipal {
-
-  private Controller controller;
-
-  public PanelPrincipal(Controller controller) {
-
-    this.controller = controller;
-    JFrame frame = new JFrame();
-    JButton button = new JButton("USUARIOS");
-    button.setBounds(200,225,100,50);
-    button.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        try {
-          System.out.println(controller.descargarUsuarios());
-        } catch (RemoteException re){
-          re.printStackTrace();
-        }
-      }
-    });
-
-    JButton button1 = new JButton("ORGANIZACIONES");
-    button1.setBounds(100,125,70,70);
-    button1.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        try {
-          System.out.println(controller.descargarOrganizaciones());
-        } catch (RemoteException re){
-          re.printStackTrace();
-        }
-      }
-    });
-
-    JButton button2 = new JButton("REPOSITORIOS");
-    button2.setBounds(0,125,70,70);
-    button2.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        try {
-          System.out.println(controller.descargarRepositorios());
-        } catch (RemoteException re){
-          re.printStackTrace();
-        }
-      }
-    });
-
-    frame.add(button);
-    frame.add(button1);
-    frame.add(button2);
-    frame.setSize(500,500);
-    frame.setLayout(null);
-    frame.setVisible(true);
-  }
-}
-
-
-/*-------------------------------------------
-ESTA ES LA LP QUE HIZO HARITZ Y LA QUE USAREMOS EN LA APLICACION. LA HE COMENTADO PARA QUE SEA MAS SENCILLO ENTENDER COMO FUNCIONA LA CONEXION
-MEDIANTE EL EJEMPLO DE ARRIBA.
----------------------------------------------
-
-package client.gui;
-
-import java.rmi.RemoteException;
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -110,6 +38,54 @@ import java.awt.Point;
 import client.controller.Controller;
 
 public class PanelPrincipal extends JFrame {
+	/**
+	 this.controller = controller;
+	    JFrame frame = new JFrame();
+	    JButton button = new JButton("USUARIOS");
+	    button.setBounds(200,225,100,50);
+	    button.addActionListener(new ActionListener() {
+	      public void actionPerformed(ActionEvent e) {
+	        try {
+	          System.out.println(controller.descargarUsuarios());
+	        } catch (RemoteException re){
+	          re.printStackTrace();
+	        }
+	      }
+	    });
+
+	    JButton button1 = new JButton("ORGANIZACIONES");
+	    button1.setBounds(100,125,70,70);
+	    button1.addActionListener(new ActionListener() {
+	      public void actionPerformed(ActionEvent e) {
+	        try {
+	          System.out.println(controller.descargarOrganizaciones());
+	        } catch (RemoteException re){
+	          re.printStackTrace();
+	        }
+	      }
+	    });
+
+	    JButton button2 = new JButton("REPOSITORIOS");
+	    button2.setBounds(0,125,70,70);
+	    button2.addActionListener(new ActionListener() {
+	      public void actionPerformed(ActionEvent e) {
+	        try {
+	          System.out.println(controller.descargarRepositorios());
+	        } catch (RemoteException re){
+	          re.printStackTrace();
+	        }
+	      }
+	    });
+
+	    frame.add(button);
+	    frame.add(button1);
+	    frame.add(button2);
+	    frame.setSize(500,500);
+	    frame.setLayout(null);
+	    frame.setVisible(true);
+	  }
+	}
+*/
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -139,6 +115,8 @@ public class PanelPrincipal extends JFrame {
 	private JRadioButton rdbtnNewRadioButton_3;
 	private JRadioButton rdbtnNewRadioButton_1_1;
 	private JRadioButton rdbtnNewRadioButton_2_1;
+	
+	private int estado;
 
   private Controller controller;
 
@@ -215,13 +193,14 @@ public class PanelPrincipal extends JFrame {
 		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnNewButton.setIcon(new ImageIcon(PanelPrincipal.class.getResource("OrganizacionClaro.png")));
+				btnNewButton.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/OrganizacionClaro.png")));
 				btnNewButton_1.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/InvestigadorOscuro.png")));
 				btnNewButton_2.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/TematicaClaro.png")));
 				btnNewButton_3.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/EquipoClaro.png")));
 				btnNewButton_5.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/ProyectoClaro.png")));
 
 				deshabilitar();
+				estado =1;
 
 				chckbxNewCheckBox.setEnabled(true);
 				chckbxNewCheckBox_1.setEnabled(true);
@@ -248,13 +227,14 @@ public class PanelPrincipal extends JFrame {
 				btnNewButton_5.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/ProyectoClaro.png")));
 
 				deshabilitar();
+				estado =2;
 
 				chckbxNewCheckBox.setEnabled(true);
-				chckbxNewCheckBox_1.setEnabled(false);
-				chckbxNewCheckBox_2.setEnabled(false);
-				chckbxNewCheckBox_3.setEnabled(false);
-				chckbxNewCheckBox_4.setEnabled(false);
-				chckbxNewCheckBox_5.setEnabled(false);
+				chckbxNewCheckBox_1.setEnabled(true);
+				chckbxNewCheckBox_2.setEnabled(true);
+				chckbxNewCheckBox_3.setEnabled(true);
+				chckbxNewCheckBox_4.setEnabled(true);
+				chckbxNewCheckBox_5.setEnabled(true);
 			}
 		});
 
@@ -267,6 +247,10 @@ public class PanelPrincipal extends JFrame {
 		btnNewButton_3.setBackground(SystemColor.menu);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				JOptionPane.showMessageDialog(null, "Esta opción no se ha desarrolla en este verson de la aplicación.");
+				
+				/** APARTADO NO DESARROLLADO EN DICHA ENTREGA. POSIBLE DESARROLLO EN EL FUTURO.
 				btnNewButton.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/OrganizacionClaro.png")));
 				btnNewButton_1.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/InvestigadorClaro.png")));
 				btnNewButton_2.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/TematicaClaro.png")));
@@ -274,6 +258,7 @@ public class PanelPrincipal extends JFrame {
 				btnNewButton_5.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/ProyectoClaro.png")));
 
 				deshabilitar();
+				estado = 3;
 
 				chckbxNewCheckBox.setEnabled(true);
 				chckbxNewCheckBox_1.setEnabled(false);
@@ -281,6 +266,7 @@ public class PanelPrincipal extends JFrame {
 				chckbxNewCheckBox_3.setEnabled(true);
 				chckbxNewCheckBox_4.setEnabled(true);
 				chckbxNewCheckBox_5.setEnabled(true);
+				*/
 			}
 		});
 
@@ -293,6 +279,10 @@ public class PanelPrincipal extends JFrame {
 		btnNewButton_5.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/ProyectoClaro.png")));
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				JOptionPane.showMessageDialog(null, "Esta opción no se ha desarrolla en este verson de la aplicación.");
+				
+				/** APARTADO NO DESARROLLADO EN DICHA ENTREGA. POSIBLE DESARROLLO EN EL FUTURO.
 				btnNewButton.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/OrganizacionClaro.png")));
 				btnNewButton_1.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/InvestigadorClaro.png")));
 				btnNewButton_2.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/TematicaClaro.png")));
@@ -300,6 +290,7 @@ public class PanelPrincipal extends JFrame {
 				btnNewButton_5.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/ProyectoOscuro.png")));
 
 				deshabilitar();
+				estado = 5;
 
 				chckbxNewCheckBox.setEnabled(false);
 				chckbxNewCheckBox_1.setEnabled(false);
@@ -307,6 +298,7 @@ public class PanelPrincipal extends JFrame {
 				chckbxNewCheckBox_3.setEnabled(false);
 				chckbxNewCheckBox_4.setEnabled(true);
 				chckbxNewCheckBox_5.setEnabled(true);
+				*/
 			}
 		});
 
@@ -316,10 +308,18 @@ public class PanelPrincipal extends JFrame {
 		JButton btnNewButton_4 = new JButton("");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				ArrayList <String> arrayParams = new ArrayList<>();
+				HashMap <String, String> datos;
+				
 				try {
-					System.out.println(controller.descarga(arrayParams));
+					datos =crearHashMap();
+					if(estado == 0) {
+						System.out.println(controller.descargarOrganizaciones(datos));
+					}else if(estado == 1) {
+						System.out.println(controller.descargarUsuarios(datos));
+					}else if (estado == 2) {
+						System.out.println(controller.descargarRepositorios(datos));
+					}
+					  
 				} catch(RemoteException re) {
 					re.printStackTrace();
 				}
@@ -976,4 +976,40 @@ public class PanelPrincipal extends JFrame {
 		rdbtnNewRadioButton_1_1.setEnabled(false);
 		rdbtnNewRadioButton_2_1.setEnabled(false);
 	}
-}*/
+	
+	public HashMap<String,String> crearHashMap() {
+		
+		HashMap<String,String> datos = new HashMap<String,String>();
+		
+		datos.put("Nombre",""+chckbxNewCheckBox.isSelected());		
+		datos.put("PrimerApellido",""+chckbxNewCheckBox_1.isSelected());		
+		datos.put("SegundoApellido",""+chckbxNewCheckBox_2.isSelected());		
+		datos.put("Localizacion",""+chckbxNewCheckBox_3.isSelected());
+		datos.put("FechaAlta",""+chckbxNewCheckBox_4.isSelected());		
+		datos.put("FechaBaja",""+chckbxNewCheckBox_5.isSelected());
+		
+		datos.put("txtNombre",txtNombre.getText());		
+		datos.put("txtPrimerApellido",txtPrimerApellido.getText());		
+		datos.put("txtSegundoApellido",txtPrimerApellido.getText());		
+		datos.put("txtLocalizacion",txtLocalizacion.getText());
+		datos.put("txtFechaAltaAntesDe",txtDdmmaaaa.getText());
+		datos.put("txtFechaAltaDespuesde",txtDdmmaaaa_1.getText());
+		datos.put("txtFechaAltaEntre1",textField_2.getText());
+		datos.put("txtFechaAltaEntre2",textField_3.getText());
+		datos.put("txtFechaBajaAntesDe",textField.getText());
+		datos.put("txtFechaBajaDespuesde",textField_1.getText());
+		datos.put("txtFechaBajaEntre1",textField_4.getText());
+		datos.put("txtFechaBajaEntre2",textField_5.getText());	
+
+			
+		datos.put("FechaAltaEntre1",""+rdbtnNewRadioButton.isSelected());		
+		datos.put("FechaAltaEntre2",""+rdbtnNewRadioButton_1.isSelected());
+		datos.put("FechaBajaAntesDe",""+rdbtnNewRadioButton_2.isSelected());		
+		datos.put("FechaBajaDespuessDe",""+rdbtnNewRadioButton_3.isSelected());
+		datos.put("FechaBajaEntre1",""+rdbtnNewRadioButton_1_1.isSelected());
+		datos.put("FechaBajaEntre2",""+rdbtnNewRadioButton_2_1.isSelected());
+		
+		return datos;
+	}
+
+}
