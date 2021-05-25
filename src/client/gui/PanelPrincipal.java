@@ -38,54 +38,6 @@ import java.awt.Point;
 import client.controller.Controller;
 
 public class PanelPrincipal extends JFrame {
-	/**
-	 this.controller = controller;
-	    JFrame frame = new JFrame();
-	    JButton button = new JButton("USUARIOS");
-	    button.setBounds(200,225,100,50);
-	    button.addActionListener(new ActionListener() {
-	      public void actionPerformed(ActionEvent e) {
-	        try {
-	          System.out.println(controller.descargarUsuarios());
-	        } catch (RemoteException re){
-	          re.printStackTrace();
-	        }
-	      }
-	    });
-
-	    JButton button1 = new JButton("ORGANIZACIONES");
-	    button1.setBounds(100,125,70,70);
-	    button1.addActionListener(new ActionListener() {
-	      public void actionPerformed(ActionEvent e) {
-	        try {
-	          System.out.println(controller.descargarOrganizaciones());
-	        } catch (RemoteException re){
-	          re.printStackTrace();
-	        }
-	      }
-	    });
-
-	    JButton button2 = new JButton("REPOSITORIOS");
-	    button2.setBounds(0,125,70,70);
-	    button2.addActionListener(new ActionListener() {
-	      public void actionPerformed(ActionEvent e) {
-	        try {
-	          System.out.println(controller.descargarRepositorios());
-	        } catch (RemoteException re){
-	          re.printStackTrace();
-	        }
-	      }
-	    });
-
-	    frame.add(button);
-	    frame.add(button1);
-	    frame.add(button2);
-	    frame.setSize(500,500);
-	    frame.setLayout(null);
-	    frame.setVisible(true);
-	  }
-	}
-*/
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
