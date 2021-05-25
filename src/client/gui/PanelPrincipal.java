@@ -68,6 +68,12 @@ public class PanelPrincipal extends JFrame {
 	private JRadioButton rdbtnNewRadioButton_1_1;
 	private JRadioButton rdbtnNewRadioButton_2_1;
 	
+	private JButton btnNewButton = new JButton("\r\n");
+	private JButton btnNewButton_1 = new JButton("");
+	private JButton btnNewButton_2 = new JButton("");
+	private JButton btnNewButton_3 = new JButton("");
+	private JButton btnNewButton_5 = new JButton("");
+	
 	private int estado;
 
   private Controller controller;
@@ -99,12 +105,6 @@ public class PanelPrincipal extends JFrame {
 		ImageIcon imgThisImg = new ImageIcon(PanelPrincipal.class.getResource("/GitHubSelecter.png"));
 
 		lblNewLabel.setIcon(imgThisImg);
-
-		JButton btnNewButton = new JButton("\r\n");
-		JButton btnNewButton_1 = new JButton("");
-		JButton btnNewButton_2 = new JButton("");
-		JButton btnNewButton_3 = new JButton("");
-		JButton btnNewButton_5 = new JButton("");
 
 		chckbxNewCheckBox_1.setEnabled(false);
 		chckbxNewCheckBox_2.setEnabled(false);
