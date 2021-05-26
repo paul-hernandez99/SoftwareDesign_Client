@@ -112,6 +112,8 @@ public class PanelPrincipal extends JFrame {
 
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				deshabilitar();
+				estado = 0;
 				chckbxNewCheckBox.setEnabled(true);
 				chckbxNewCheckBox_1.setEnabled(false);
 				chckbxNewCheckBox_2.setEnabled(false);
@@ -135,6 +137,7 @@ public class PanelPrincipal extends JFrame {
 		btnNewButton.setBackground(SystemColor.menu);
 
 		JScrollPane scrollPane = new JScrollPane();
+		estado = 0;
 
 		btnNewButton_1.setIcon(new ImageIcon(PanelPrincipal.class.getResource("/InvestigadorClaro.png")));
 		btnNewButton_1.setVerticalAlignment(SwingConstants.BOTTOM);
